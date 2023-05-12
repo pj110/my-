@@ -1,45 +1,88 @@
 <template>
-  <div class="home">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-        <el-sub-menu index="2-4">
-          <template #title>item four</template>
-          <el-menu-item index="2-4-1">item one</el-menu-item>
-          <el-menu-item index="2-4-2">item two</el-menu-item>
-          <el-menu-item index="2-4-3">item three</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="3" disabled>Info</el-menu-item>
-      <el-menu-item index="4">Orders</el-menu-item>
-    </el-menu>
-    <el-backtop :right="100" :bottom="100">
-      <div style="
-        height: 100%;
-        width: 100%;
-        text-align: center;
-        line-height: 40px;
-        color: #1989fa;
-      ">
-        UP123
+  <div class="header">
+    123123123
+  </div>
+  <div class="body">
+    <section class="section1" id="section1">
+      <div class="MoveCardBox">
+        <MoveCard :data-image="womanPng">
+          <template v-slot:header>
+            <h1>Canyons</h1>
+          </template>
+          <template v-slot:content>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </template>
+        </MoveCard>
       </div>
-    </el-backtop>
+
+    </section>
+    <section class="section2">
+      公司官网
+    </section>
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import womanPng from '@/assets/images/woman.png'
+import { ref, onMounted, nextTick } from 'vue'
+import praticleText from '@/components/canvas/TextParticle.vue'
+import MoveCard from '@/components/MoveCard/MoveCard.vue'
 
-const activeIndex = ref('1')
-const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+let canvasHeight = ref<number>(0);
+let canvasWidth = ref<number>(0);
+let myCanvs = ref(null);
+onMounted(() => {
+  canvasHeight.value = document.getElementById('section1').offsetHeight;
+  canvasWidth.value = document.getElementById('section1').offsetWidth;
+  nextTick(() => {
+    //myCanvs.value.startCanvas()
+  })
+})
+
 </script>
 <style lang="scss" scoped>
-.home {
+.header {
+  height: 130px;
+  width: 100%;
+}
+
+.body {
   height: 8000px;
+
+}
+
+.section1 {
+  padding-top: 60px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #4612a4;
+  z-index: -1;
+
+  .MoveCardBox {
+  }
+}
+
+.section2 {
+  height: 100vh;
+  margin-top: 100vh;
+  width: 100%;
+  padding: 100px 5% 30px;
+  position: relative;
+  background: #fff;
+
+  &:before {
+    width: 100%;
+    height: 40vh;
+    left: 0%;
+    top: -40vh;
+    content: '';
+    position: absolute;
+    background: linear-gradient(0deg, rgba(70, 18, 164, 1), rgba(70, 18, 164, 0));
+    z-index: 1;
+  }
+
+  //&::after {}
 }
 </style>
