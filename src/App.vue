@@ -3,17 +3,16 @@
 
 <template>
   <div class="layout-view">
-    <el-scrollbar wrap-style="height: 100%" max-height="100%" always>
-      <RouterView />
-      <el-backtop :bottom="100" target=".layout-view  .el-scrollbar__wrap">
-      </el-backtop>
-    </el-scrollbar>
+    <!-- <el-scrollbar wrap-style="height: 100%" max-height="100%" always>
+          </el-scrollbar> -->
+    <RouterView />
+    <el-backtop :bottom="100">
+    </el-backtop>
   </div>
 </template>
 
 <style scoped>
 .layout-view {
   height: 100%;
-
 }
 </style>
