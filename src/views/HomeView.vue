@@ -61,7 +61,7 @@
       </div>
       <div class="section2-title-carousel">
         <el-carousel :interval="4000" type="card" height="200px">
-          <el-carousel-item v-for="item in 6" :key="item">
+          <el-carousel-item v-for="item in 3" :key="item">
             <div>
               {{ item }}
             </div>
@@ -101,12 +101,25 @@
       </ul>
     </div>
   </section>
+  <section class="section3">
+    <ParallaxScrolling :bgdata="ps1" onlyname="ps1">
+
+    </ParallaxScrolling>
+  </section>
+  <section class="section3">
+    <ParallaxScrolling :bgdata="ps2" onlyname="ps2">
+
+    </ParallaxScrolling>
+  </section>
 </template>
 <script setup lang="ts">
+import ps1 from '@/assets/images/ps1.jpg'
+import ps2 from '@/assets/images/ps2.jpg'
 import womanPng from '@/assets/images/woman.png'
 import { ref, onMounted, nextTick } from 'vue'
 import praticleText from '@/components/canvas/TextParticle.vue'
 import MoveCard from '@/components/MoveCard/MoveCard.vue'
+import ParallaxScrolling from '@/components/ParallaxScrolling/ParallaxScrolling.vue'
 //import SexBtn from '@/components/SexBtn/SexBtn.vue'
 
 let canvasHeight = ref<number>(0);
@@ -147,6 +160,7 @@ onMounted(() => {
   top: 0;
   left: 0;
   background: #4612a4;
+  z-index: -1;
 
   &::after {
     content: '';
@@ -240,7 +254,7 @@ onMounted(() => {
         list-style-type: none;
         width: 8vw;
         height: 6vw;
-        margin: 10px;
+        margin: 0.5vw;
         transform-style: preserve-3d;
         transition: 0.5s;
 
@@ -266,6 +280,7 @@ onMounted(() => {
     position: absolute;
     background: linear-gradient(0deg, rgba(70, 18, 164, 1), rgba(70, 18, 164, 0));
     z-index: 1;
+    pointer-events: none;
   }
 
   &::after {
@@ -277,6 +292,14 @@ onMounted(() => {
     position: absolute;
     background: linear-gradient(0deg, rgba(70, 18, 164, 1), rgba(70, 18, 164, 0));
     z-index: 1;
+    pointer-events: none;
   }
+}
+
+.section3 {
+  height: 100vh;
+  width: 100%;
+  background: #4612a4;
+
 }
 </style>
