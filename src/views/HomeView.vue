@@ -12,7 +12,7 @@
           <h1>小程序开发</h1>
         </template>
         <template v-slot:content>
-          <p>助力数字化转型</p>
+          <p>！！！！</p>
         </template>
       </MoveCard>
       <MoveCard :data-image="womanPng">
@@ -20,12 +20,12 @@
           <h1>网站/H5</h1>
         </template>
         <template v-slot:content>
-          <p>3D沉浸式品牌网站定制</p>
+          <p>！！！！</p>
         </template>
       </MoveCard>
       <MoveCard :data-image="womanPng">
         <template v-slot:header>
-          <h1>智慧城市</h1>
+          <h1>uniapp/Taro</h1>
         </template>
         <template v-slot:content>
           <p>====</p>
@@ -49,8 +49,8 @@
       </MoveCard>
     </div>
     <div class="section1-body">
-      <p>· 抢占亿级市场流量新入口，打造微信小程序私域流量</p>
-      <p>· 高效传达品牌信息，建立品牌初步印象，根据企业在不同发展阶段对应不同品牌形象需求，实现品牌线上形象传播</p>
+      <p>· 富强文明民主和谐，爱国敬业诚信友善，自由平等公正法制</p>
+      <!-- <p>· 高效传达品牌信息，建立品牌初步印象，根据企业在不同发展阶段对应不同品牌形象需求，实现品牌线上形象传播</p> -->
     </div>
   </section>
   <section class="section2">
