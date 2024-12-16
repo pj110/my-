@@ -21,6 +21,7 @@
 }
 
 .foot {
+  height: 30px;
   gap: 10px;
   color: #fff;
   font-size: 12px;
